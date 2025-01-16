@@ -7,9 +7,10 @@ export class AuthService{
     account;
 
     constructor(){
+        console.log("Appwrite URL:", conf); 
         this.client 
             .setEndpoint(conf.appwriteUrl)
-            .setProject(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectId)
         
         this.account=new Account(this.client)
 
@@ -17,7 +18,8 @@ export class AuthService{
 
     async  createAccount({email,password,name}){
       try{
-       const userAccount = this.account.create(ID.unique(),email,password,name)
+       const userAccount = await this.account.create(ID.unique(),email,password,name)
+       console.log("User account created:", userAccount);
        if(userAccount){
         return this.login({email,password})
        }
