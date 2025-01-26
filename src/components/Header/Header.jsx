@@ -85,7 +85,7 @@ function Header() {
             <Container>
                 <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
                     {/* Logo */}
-                    <Link to="/" className="text-2xl font-bold text-gray-800">
+                    <Link to="/" className="text-2xl font-bold text-gray-800 landing-page-headline">
                         BlogHub
                     </Link>
 

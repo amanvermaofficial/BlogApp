@@ -7,7 +7,7 @@ from 'react-router-dom'
 import { Provider } from 'react-redux';
 import  store  from './store/store.js';
 import { AuthLayout,Login,Signup} from './components/index.js';
-
+import Home from './pages/Home.jsx'
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,9 @@ const router = createBrowserRouter([
     children:[
       {
         path: '/',
-        element: <div>Welcome to BlogHub</div>,  
+        element: (
+          <Home />
+        )
       },
       {
         path:'/login',

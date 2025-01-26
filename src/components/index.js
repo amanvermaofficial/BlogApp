@@ -7,6 +7,7 @@ import Input  from "./Input";
 import AuthLayout from './AuthLayout'
 import Login from "./Login";
 import Signup from "./Signup";
+import Home from "../pages/Home";
 export{
     Container,
     LogoutBtn,
@@ -16,5 +17,6 @@ export{
     Input,
     AuthLayout,
     Login,
-    Signup
+    Signup,
+    Home
 }
