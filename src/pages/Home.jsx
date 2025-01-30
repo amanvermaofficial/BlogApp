@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import blogImage from '../assets/blog.jpg'
 import appwriteService from '../appwrite/config'
 import { Button } from '../components'
+import PostCard from '../components/PostCard'
 function Home() {
   const [posts, setPosts] = useState([])
   useEffect(() => {
@@ -38,23 +39,11 @@ function Home() {
 
 
     <div className="bg-gray-100 min-h-screen py-8">
-      <div className="max-w-4xl mx-auto space-y-6">
-        <div className="bg-white shadow-md rounded-lg p-6 flex gap-4 items-start">
-          <div className="bg-pink-200 text-pink-800 text-sm font-bold px-2 py-1 rounded-md">Product</div>
-          <div className="flex-1">
-            <h2 className="text-lg font-semibold text-gray-800">Two Titans and Me in the Middle: A Guide to Managing Conflict</h2>
-            <p className="text-gray-600 mt-2">
-              Would you like to know how I accidentally became a referee between two tech titans? Here’s how I survived that battle.
-            </p>
-            <div className="mt-4 flex items-center text-sm text-gray-500 space-x-4">
-              <span>📅 2d ago</span>
-              <span>⭐ 358</span>
-              <span>💬 16</span>
-            </div>
-          </div>
-          <img className="h-16 w-16 object-cover rounded-md" src="https://t3.ftcdn.net/jpg/05/91/70/20/360_F_591702071_ZL4Zk1OyxbVGP8tqyAFJhj8EptEhd0Qe.jpg" alt="Image" />
-        </div>
+      {posts.map((post)=>(
+      <div key={post.$id} className="max-w-4xl mx-auto space-y-6">
+         <PostCard post={post} />
       </div>
+       ))}
     </div>
 
   )
