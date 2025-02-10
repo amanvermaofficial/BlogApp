@@ -7,7 +7,6 @@ export class AuthService{
     account;
 
     constructor(){
-        console.log("Appwrite URL:", conf); 
         this.client 
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId)
@@ -15,6 +14,9 @@ export class AuthService{
         this.account=new Account(this.client)
 
     }
+
+ 
+
 
     async  createAccount({email,password,name}){
       try{

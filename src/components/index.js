@@ -8,6 +8,11 @@ import AuthLayout from './AuthLayout'
 import Login from "./Login";
 import Signup from "./Signup";
 import Home from "../pages/Home";
+import RTE from './RTE';
+import Select from './Select'
+import PostForm from './post-form/PostForm'
+import PostCard from './PostCard'
+
 export{
     Container,
     LogoutBtn,
@@ -18,5 +23,9 @@ export{
     AuthLayout,
     Login,
     Signup,
-    Home
+    Home,
+    RTE,
+    Select,
+    PostForm,
+    PostCard
 }
