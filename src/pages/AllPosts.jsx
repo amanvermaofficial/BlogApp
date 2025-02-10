@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import React, {useState, useEffect } from 'react'
+import { Container,PostCard } from '../components'
+import appwriteService from '../appwrite/config'
 
 function AllPosts() {
   const [posts,setPosts] = useState([])
@@ -11,19 +13,22 @@ function AllPosts() {
     })
   },[])
   return (
-    <div className='w-full'>
-      <Container>
-        <div className="flex-flex-wrap">
-          {
-            posts.map((post)=>{
-              <div key={post.$id} className="p-2 w-1/4">
-                     <PostCard post={post} />
-               </div>
-            })
-          }
-        </div>
-      </Container>
-    </div>
+    <div className="w-full">
+    <Container>
+      <div className="flex flex-wrap">
+        {posts.map((post) => {
+          console.log("Parent Component - post:", post);  // ✅ Log here
+          return (
+            <div key={post.$id} className="p-2 w-1/4">
+              <PostCard {...post} />
+            </div>
+          );
+        })}
+      </div>
+    </Container>
+  </div>
+  
+  
   )
 }
 

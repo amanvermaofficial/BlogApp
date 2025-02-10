@@ -41,7 +41,7 @@ function Home() {
     <div className="bg-gray-100 min-h-screen py-8">
       {posts.map((post)=>(
       <div key={post.$id} className="max-w-4xl mx-auto space-y-6">
-         <PostCard post={post} />
+         <PostCard {...post} />
       </div>
        ))}
     </div>
