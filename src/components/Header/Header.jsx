@@ -6,8 +6,7 @@ import { useSelector } from 'react-redux';
 
 function Header() {
     const authStatus = useSelector((state) => state.auth.status)
-    console.log(authStatus);
-    
+
     const navigate = useNavigate();
     const navItems = [
         {
@@ -41,7 +40,7 @@ function Header() {
             <Container>
                 <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 flex-col md:flex-row">
                     <Link to="/" className="logo text-2xl font-bold text-gray-800 landing-page-headline">
-                        BlogHub
+                    brainpages
                     </Link>
 
                     <nav className="flex">
