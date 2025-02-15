@@ -12,7 +12,8 @@ import AddPost from './pages/AddPost.jsx'
 import EditPost from './pages/EditPost.jsx'
 
 import Post from './pages/Post.jsx'
-import AllPosts from './pages/AllPosts.jsx'
+import MyPosts from './pages/MyPosts.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -42,10 +43,10 @@ const router = createBrowserRouter([
         )
       },
       {
-        path:'/all-posts',
+        path:'/MyPost',
         element:(
           <AuthLayout authentication>
-            <AllPosts/>
+            <MyPosts/>
           </AuthLayout>
         )
       },

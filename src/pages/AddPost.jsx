@@ -3,7 +3,7 @@ import {Container,PostForm} from '../components'
 
 function AddPost() {
   return (
-    <div>
+    <div className='w-full'>
       <Container>
         <PostForm/>
       </Container>

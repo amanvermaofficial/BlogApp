@@ -1,9 +1,12 @@
 import React, {useState, useEffect } from 'react'
 import { Container,PostCard } from '../components'
 import appwriteService from '../appwrite/config'
+import { useSelector } from 'react-redux'
 
 function AllPosts() {
   const [posts,setPosts] = useState([])
+
+  userData = useSelector((state)=>state.auth.userData);
 
   useEffect(()=>{
     appwriteService.getPosts([]).then((posts)=>{
@@ -17,7 +20,7 @@ function AllPosts() {
     <Container>
       <div className="flex flex-wrap">
         {posts.map((post) => {
-          console.log("Parent Component - post:", post);  // ✅ Log here
+          
           return (
             <div key={post.$id} className="p-2 w-1/4">
               <PostCard {...post} />

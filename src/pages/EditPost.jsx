@@ -10,7 +10,7 @@ function EditPost() {
 
     useEffect(()=>{
         if(slug){
-            appwriteService.getPost(slug).then(()=>{
+            appwriteService.getPost(slug).then((post)=>{
                 if(post){
                     setPost(post)
                 }
@@ -20,7 +20,7 @@ function EditPost() {
         }
     },[slug,navigate])
   return post ? (
-    <div className='py-8'>
+    <div className='py-8 w-full'>
       <Container>
         <PostForm post={post} />
       </Container>
