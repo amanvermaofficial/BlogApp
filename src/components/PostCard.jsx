@@ -13,7 +13,10 @@ function PostCard({ $id, title,desc,featuredImage ,$createdAt  }) {
             {desc}
           </p>
           <div className="mt-4 flex items-center text-sm text-gray-500 space-x-4">
-            <span>📅 {formattedDate}</span>
+          <span className="px-3 py-1 bg-green-500 text-white font-semibold text-sm rounded-md">
+  {formattedDate}
+</span>
+
             {/* <span>⭐ 358</span>
             <span>💬 16</span> */}
           </div>

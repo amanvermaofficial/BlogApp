@@ -38,7 +38,7 @@ function Post() {
           {/* Responsive Image */}
           <img
             src={appwriteService.getFilePreview(post.featuredImage)}
-            className="w-full max-h-[400px] object-cover rounded-lg"
+            className="w-full max-h-[400px] object-contain rounded-lg"
             alt={post.title}
           />
 
