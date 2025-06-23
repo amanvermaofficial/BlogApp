@@ -12,9 +12,8 @@ function MyPosts() {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true) 
   const user = useSelector((state)=>state.auth.userData);
- 
   
-  useEffect(() => {
+  useEffect(() => { 
     appwriteService.getPosts([Query.equal("userId",user.$id)]).then((posts) => {
       if (posts) { 
         setPosts(posts.documents)

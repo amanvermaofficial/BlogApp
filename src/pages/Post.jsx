@@ -4,6 +4,8 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import appwriteService from "../appwrite/config";
 import { Button, Container } from "../components";
 import parse from "html-react-parser";
+import CommentForm from "../components/CommentForm";
+import Comments from "../components/Comments";
 
 function Post() {
   const [post, setPost] = useState(null);
@@ -61,7 +63,13 @@ function Post() {
         </div>
 
         {/* Content */}
-        <div className="browser-css text-justify leading-relaxed">{parse(post.content)}</div>
+        <div className="browser-css text-justify leading-relaxed mb-16">{parse(post.content)}</div>
+        <div className="">
+          <h4 className="font-bold text-2xl mb-3">Comments</h4>
+          <CommentForm post={post}/>
+          <Comments post={post}/>
+        </div>
+        
       </Container>
     </div>
   ) : null;
