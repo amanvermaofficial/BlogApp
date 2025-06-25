@@ -44,6 +44,38 @@ export class CommentService{
             return [];
         }
     }
+
+    async updateComment(commentId,{comment}){
+        try {
+              console.log("Updating comment ID:", commentId);       // ← Add this
+        console.log("New comment text:", comment);            // ← And this
+
+           return await this.databases.updateDocument(
+            conf.appwriteDatabaseId,
+            conf.appwriteCommentsCollectionId,
+            commentId,
+            {
+                comment
+            }
+           )
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async deleteComment(commentId){
+        try {
+            await this.databases.deleteDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCommentsCollectionId,
+                commentId
+            )
+            return true
+        } catch (error) {
+            console.error("Delete Comment:",error)
+            return false
+        }
+    }
 }
 
 const commentService = new CommentService()

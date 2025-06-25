@@ -9,6 +9,7 @@ import Comments from "../components/Comments";
 
 function Post() {
   const [post, setPost] = useState(null);
+  const [editingComment,setEditingComment] = useState(null)
   const { slug } = useParams();
   const navigate = useNavigate();
 
@@ -66,10 +67,9 @@ function Post() {
         <div className="browser-css text-justify leading-relaxed mb-16">{parse(post.content)}</div>
         <div className="">
           <h4 className="font-bold text-2xl mb-3">Comments</h4>
-          <CommentForm post={post}/>
-          <Comments post={post}/>
+          <CommentForm post={post} editingComment={editingComment} setEditingComment={setEditingComment}/>
+          <Comments post={post} setEditingComment={setEditingComment}/>
         </div>
-        
       </Container>
     </div>
   ) : null;
