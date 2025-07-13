@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const footerLinks = [
-    { name: 'Help', href: '/help' },
-    { name: 'Status', href: '/status' },
-    { name: 'Writers', href: '/writers' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Privacy', href: '/privacy' },
-    { name: 'Terms', href: '/terms' },
-    { name: 'About', href: '/about' },
+    { name: 'Help', href: '/' },
+    { name: 'Status', href: '/' },
+    { name: 'Writers', href: '/' },
+    { name: 'Blog', href: '/' },
+    { name: 'Careers', href: '/' },
+    { name: 'Privacy', href: '/' },
+    { name: 'Terms', href: '/' },
+    { name: 'About', href: '/' },
   ];
 
 function Footer() {
